@@ -1,0 +1,26 @@
+[
+  {
+    "bookUUID": "c746a291-0ef9-4b2a-8268-392b12d636bd",
+    "title": "The Winds of Winter",
+    "author": "George R R Martin",
+    "price": 52.75,
+    "isbn": "978-0-1256-0432-1",
+    "format": "Hardcover"
+  },
+  {
+    "bookUUID": "d82bf28e-eb73-45c9-9ce3-1f94a599a0b5",
+    "title": "The Shadow of What Was Lost",
+    "author": "James Islington",
+    "price": 15.30,
+    "isbn": "978-0-3162-7407-4",
+    "format": "eBook"
+  },
+  {
+    "bookUUID": "3247c340-c712-402e-b400-0a23a9368c97",
+    "title": "An Echo Of Things To Come",
+    "author": "James Islington",
+    "price": 32.5,
+    "isbn": "978-0-3162-7409-8",
+    "format": ""
+  }
+]
