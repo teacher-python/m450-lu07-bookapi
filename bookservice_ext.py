@@ -4,10 +4,11 @@ import re
 from flask import make_response
 from flask_restful import Resource, reqparse
 
+from authorization import token_required, admin_required
 from bookdao import BookDAO
 
 
-class BookService(Resource):
+class BookServiceExt(Resource):
     def __init__(self):
         """
         constructor
@@ -23,6 +24,7 @@ class BookService(Resource):
         self.parser.add_argument('isbn', location='form', default='', help='isbn-13')
         self.parser.add_argument('format', location='form', required=True, default=None, help='format')
 
+    @token_required
     def get(self, book_uuid):
         book_dao = BookDAO()
         book = book_dao.read_book(book_uuid)
@@ -35,6 +37,8 @@ class BookService(Resource):
 
         return make_response(data, http_status)
 
+    @token_required
+    @admin_required
     def delete(self, book_uuid):
         book_dao = BookDAO()
         book = book_dao.read_book(book_uuid)
@@ -45,6 +49,8 @@ class BookService(Resource):
 
         return make_response('', http_status)
 
+    @token_required
+    @admin_required
     def post(self):
         args = self.parser.parse_args()
         if args.book_uuid is None or args.book_uuid == '':
